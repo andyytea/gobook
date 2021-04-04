@@ -9,10 +9,14 @@ const exampleString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 
 var example = strings.Fields(exampleString)
 
+var result string
+
 func benchmark(b *testing.B, size int, fn func([]string) string) {
+	var r string
 	for i := 0; i < b.N; i++ {
-		fn(example[1:size])
+		r = fn(example[1:size])
 	}
+	result = r
 }
 
 func test(t *testing.T, fn func([]string) string) {
