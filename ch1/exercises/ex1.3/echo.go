@@ -4,18 +4,20 @@ import (
 	"strings"
 )
 
-func EchoAddIter(args []string) string {
+func EchoIter(args []string) string {
 	var s, sep string
 	for i := 0; i < len(args); i++ {
 		s += sep + args[i]
+		sep = " "
 	}
 	return s
 }
 
-func EchoAddRange(args []string) string {
+func EchoRange(args []string) string {
 	var s, sep string
 	for _, arg := range args {
 		s += sep + arg
+		sep = " "
 	}
 	return s
 }
