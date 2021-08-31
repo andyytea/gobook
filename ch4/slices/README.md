@@ -1,4 +1,4 @@
-## Arrays
+# Arrays
 
 Arrays and strucures are `aggregate` types meaning that their values are concatenations of other values in memory.
 Additionally, arrays and structures are fixed in size, while slices and maps are dynamic data structures that can grow as values are added.
@@ -100,3 +100,7 @@ LOG OUTPUT:
     append_test.go:24: (manual) cap: 524288
     append_test.go:24: (manual) cap: 1048576
 ```
+
+Clearly, the standard implementation of append is making the performance tradeoff of reallocating more frequently, rather than our manual doubling strategy which ends up allocating ridiculous chunks of memory away. 
+
+As a consequence of picking nice exponents of 2 for the size of each array, it appears that the manual method managed to allocate less memory. However, if there were 1 more element, we would have doubled the total capacity just for the single element. Despite making substantially more reallocations, the standard implementation clearly makes dynamic optimizations since it is surprisingly performant.
