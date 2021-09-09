@@ -1,3 +1,5 @@
 # code implementations
 
-[benchmarking](https://github.com/andyytea/gobook/tree/main/ch1/exercises/ex1.3)
+[benchmarking](ch1/exercises/ex1.3)
+
+[slices and arrays](ch4/slices)
